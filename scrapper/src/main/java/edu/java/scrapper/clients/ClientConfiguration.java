@@ -1,19 +1,19 @@
 package edu.java.scrapper.clients;
 
-import edu.java.scrapper.clients.impl.GitHubClient;
-import edu.java.scrapper.clients.impl.StackOverflowClient;
+import edu.java.scrapper.clients.github.GitHubClient;
+import edu.java.scrapper.clients.stackoverflow.StackOverflowClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ClientConfiguration {
     @Bean("github")
-    public Client createGithubClient() {
-        return new GitHubClient();
+    public GitHubClient createGithubClient() {
+        return new GitHubClient("https://github.com/");
     }
 
     @Bean("stackoverflow")
-    public Client createStackOverflowClient() {
-        return new StackOverflowClient();
+    public StackOverflowClient createStackOverflowClient() {
+        return new StackOverflowClient("https://api.stackexchange.com/");
     }
 }

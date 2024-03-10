@@ -1,0 +1,48 @@
+{
+    "items": [
+        {
+            "owner": {
+                "account_id": 23274,
+                "reputation": 121017,
+                "user_id": 58186,
+                "user_type": "registered",
+                "accept_rate": 96,
+                "profile_image": "https://www.gravatar.com/avatar/7ece00ffc45c3ef315d206f32999a0ac?s=256&d=identicon&r=PG",
+                "display_name": "KooiInc",
+                "link": "https://stackoverflow.com/users/58186/kooiinc"
+            },
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1710000904,
+            "last_edit_date": 1710000904,
+            "creation_date": 1710000238,
+            "answer_id": 78132987,
+            "question_id": 78132692,
+            "content_license": "CC BY-SA 4.0",
+            "link": "https://stackoverflow.com/questions/78132692/getattribute-not-returning-the-value-i-was-expecting/78132987#78132987"
+        },
+        {
+            "owner": {
+                "account_id": 194308,
+                "reputation": 68929,
+                "user_id": 436560,
+                "user_type": "registered",
+                "accept_rate": 87,
+                "profile_image": "https://i.stack.imgur.com/2GESV.jpg?s=256&g=1",
+                "display_name": "Lajos Arpad",
+                "link": "https://stackoverflow.com/users/436560/lajos-arpad"
+            },
+            "is_accepted": false,
+            "score": 0,
+            "last_activity_date": 1709997774,
+            "creation_date": 1709997774,
+            "answer_id": 78132843,
+            "question_id": 78132692,
+            "content_license": "CC BY-SA 4.0",
+            "link": "https://stackoverflow.com/questions/78132692/getattribute-not-returning-the-value-i-was-expecting/78132843#78132843"
+        }
+    ],
+    "has_more": false,
+    "quota_max": 300,
+    "quota_remaining": 288
+}
