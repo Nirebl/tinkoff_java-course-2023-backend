@@ -33,14 +33,14 @@ public class StackOverflowClientTest {
      * url: https://api.stackexchange.com/2.3/questions/78132692/answers?site=stackoverflow&fromdate=1709251200&page=1&pagesize=10&filter=!nNPvSNXCix
      */
     @Test
-    public void hasAnswerChangesForValidQuestionId() throws IOException {
+    public void answersAvailable() throws IOException {
         String testUrl = "/2.3/questions/78132692/answers?site=stackoverflow&fromdate=1709251200&page=1&pagesize=10&filter=!nNPvSNXCix";
 
         WireMock.stubFor(get(urlEqualTo(testUrl))
             .willReturn(aResponse()
                 .withStatus(200)
                 .withHeader("Content-Type", "application/json")
-                .withBody(new ClassPathResource("hasAnswerChangesForValidQuestionId.json").getContentAsString(UTF_8))));
+                .withBody(new ClassPathResource("answersAvailable.json").getContentAsString(UTF_8))));
 
         var answers = client.getAnswers(78132692, Instant.ofEpochSecond(1709251200), 1, 10);
 
@@ -58,7 +58,7 @@ public class StackOverflowClientTest {
      * url: https://api.stackexchange.com/2.3/questions/78132692/answers?site=stackoverflow&fromdate=1710028800&page=1&pagesize=10&filter=!nNPvSNXCix
      */
     @Test
-    public void hasNotAnswerChangesForValidQuestionId() throws IOException {
+    public void answersUnavailable() throws IOException {
 
         String testUrl = "/2.3/questions/78132692/answers?site=stackoverflow&fromdate=1710028800&page=1&pagesize=10&filter=!nNPvSNXCix";
 
@@ -66,7 +66,7 @@ public class StackOverflowClientTest {
             .willReturn(aResponse()
                 .withStatus(200)
                 .withHeader("Content-Type", "application/json")
-                .withBody(new ClassPathResource("hasNotAnswerChangesForValidQuestionId.json").getContentAsString(UTF_8))));
+                .withBody(new ClassPathResource("answersUnavailable.json").getContentAsString(UTF_8))));
 
         var answers = client.getAnswers(78132692, Instant.ofEpochSecond(1710028800), 1, 10);
 
@@ -78,14 +78,14 @@ public class StackOverflowClientTest {
      * url: https://api.stackexchange.com//2.3/questions/78132692/comments?site=stackoverflow&fromdate=1709251200&page=1&pagesize=3&filter=!nNPvSN_mfN
      */
     @Test
-    public void hasCommentChangesForValidQuestionId() throws IOException {
+    public void commentsAvailable() throws IOException {
         String testUrl = "/2.3/questions/78132692/comments?site=stackoverflow&fromdate=1709251200&page=1&pagesize=3&filter=!nNPvSN_mfN";
 
         WireMock.stubFor(get(urlEqualTo(testUrl))
             .willReturn(aResponse()
                 .withStatus(200)
                 .withHeader("Content-Type", "application/json")
-                .withBody(new ClassPathResource("hasCommentChangesForValidQuestionId.json").getContentAsString(UTF_8))));
+                .withBody(new ClassPathResource("commentsAvailable.json").getContentAsString(UTF_8))));
 
         var comments = client.getComments(78132692, Instant.ofEpochSecond(1709251200), 1, 3);
 
@@ -106,14 +106,14 @@ public class StackOverflowClientTest {
      * url: https://api.stackexchange.com/2.3/questions/78132692/comments?site=stackoverflow&fromdate=1710092700&page=1&pagesize=5&filter=!nNPvSN_mfN
      */
     @Test
-    public void hasNotCommentChangesForValidQuestionId() throws IOException {
+    public void commentsUnavailable() throws IOException {
         String testUrl = "/2.3/questions/78132692/comments?site=stackoverflow&fromdate=1710092700&page=1&pagesize=5&filter=!nNPvSN_mfN";
 
         WireMock.stubFor(get(urlEqualTo(testUrl))
             .willReturn(aResponse()
                 .withStatus(200)
                 .withHeader("Content-Type", "application/json")
-                .withBody(new ClassPathResource("hasNotCommentChangesForValidQuestionId.json").getContentAsString(UTF_8))));
+                .withBody(new ClassPathResource("commentsUnavailable.json").getContentAsString(UTF_8))));
 
         var comments = client.getComments(78132692, Instant.ofEpochSecond(1710092700), 1, 5);
 
@@ -130,6 +130,4 @@ public class StackOverflowClientTest {
     static void afterAll() {
         wireMockServer.stop();
     }
-
-
 }

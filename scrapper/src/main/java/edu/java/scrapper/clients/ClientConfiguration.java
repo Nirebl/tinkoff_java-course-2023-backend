@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class ClientConfiguration {
     @Bean("github")
     public GitHubClient createGithubClient() {
-        return new GitHubClient("https://github.com/");
+        return new GitHubClient("https://api.github.com/");
     }
 
     @Bean("stackoverflow")

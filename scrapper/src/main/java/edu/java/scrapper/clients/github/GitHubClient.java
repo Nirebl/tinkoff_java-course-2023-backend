@@ -7,4 +7,15 @@ public class GitHubClient extends WebScrapperClient {
         super(baseUrl);
     }
 
+    public ActivityItemDTO[] getActivities(String owner, String repo, TimePeriod period) {
+        return super.retrieve(
+            ActivityItemDTO[].class,
+            String.format(
+                "/repos/%s/%s/activity?time_period=%s",
+                owner,
+                repo,
+                period
+            )
+        ).block();
+    }
 }
