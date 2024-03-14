@@ -1,0 +1,82 @@
+{
+    "items": [
+        {
+            "owner": {
+                "account_id": 1704483,
+                "reputation": 11041,
+                "user_id": 1563833,
+                "user_type": "registered",
+                "accept_rate": 40,
+                "profile_image": "https://www.gravatar.com/avatar/f3d7ae271e46eb178e7dd4f2ef760e6f?s=256&d=identicon&r=PG",
+                "display_name": "Wyck",
+                "link": "https://stackoverflow.com/users/1563833/wyck"
+            },
+            "edited": false,
+            "score": 0,
+            "creation_date": 1710031024,
+            "post_id": 78132692,
+            "comment_id": 137747988,
+            "content_license": "CC BY-SA 4.0",
+            "link": "https://stackoverflow.com/questions/78132692/getattribute-not-returning-the-value-i-was-expecting#comment137747988_78132692"
+        },
+        {
+            "owner": {
+                "account_id": 3705307,
+                "reputation": 371,
+                "user_id": 3084010,
+                "user_type": "registered",
+                "accept_rate": 18,
+                "profile_image": "https://www.gravatar.com/avatar/9318ca782355ddd1ccee2439fe683871?s=256&d=identicon&r=PG&f=y&so-version=2",
+                "display_name": "Justin",
+                "link": "https://stackoverflow.com/users/3084010/justin"
+            },
+            "reply_to_user": {
+                "account_id": 6532198,
+                "reputation": 55610,
+                "user_id": 5053002,
+                "user_type": "registered",
+                "profile_image": "https://www.gravatar.com/avatar/ab6a9edfd2614014563162586c1b0697?s=256&d=identicon&r=PG",
+                "display_name": "Jaromanda X",
+                "link": "https://stackoverflow.com/users/5053002/jaromanda-x"
+            },
+            "edited": false,
+            "score": 0,
+            "creation_date": 1709997339,
+            "post_id": 78132692,
+            "comment_id": 137745381,
+            "content_license": "CC BY-SA 4.0",
+            "link": "https://stackoverflow.com/questions/78132692/getattribute-not-returning-the-value-i-was-expecting#comment137745381_78132692"
+        },
+        {
+            "owner": {
+                "account_id": 3705307,
+                "reputation": 371,
+                "user_id": 3084010,
+                "user_type": "registered",
+                "accept_rate": 18,
+                "profile_image": "https://www.gravatar.com/avatar/9318ca782355ddd1ccee2439fe683871?s=256&d=identicon&r=PG&f=y&so-version=2",
+                "display_name": "Justin",
+                "link": "https://stackoverflow.com/users/3084010/justin"
+            },
+            "reply_to_user": {
+                "account_id": 255434,
+                "reputation": 21745,
+                "user_id": 535480,
+                "user_type": "registered",
+                "profile_image": "https://i.stack.imgur.com/jBU8R.jpg?s=256&g=1",
+                "display_name": "James",
+                "link": "https://stackoverflow.com/users/535480/james"
+            },
+            "edited": false,
+            "score": 0,
+            "creation_date": 1709997207,
+            "post_id": 78132692,
+            "comment_id": 137745363,
+            "content_license": "CC BY-SA 4.0",
+            "link": "https://stackoverflow.com/questions/78132692/getattribute-not-returning-the-value-i-was-expecting#comment137745363_78132692"
+        }
+    ],
+    "has_more": true,
+    "quota_max": 300,
+    "quota_remaining": 296
+}
