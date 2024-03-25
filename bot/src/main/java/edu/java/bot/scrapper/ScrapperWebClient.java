@@ -9,6 +9,10 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 public class ScrapperWebClient implements ScrapperClient {
     private final WebClient webClient;
+    private final String linksResource = "/links";
+    private final String tgChatResource = "/tg-chat/%s";
+    private final String tgChatIdHeader = "Tg-Chat-Id";
+
 
     public ScrapperWebClient(String baseUrl) {
         this.webClient = WebClient.builder()
@@ -20,8 +24,8 @@ public class ScrapperWebClient implements ScrapperClient {
     public LinkResponse linksDelete(Long tgChatId, RemoveLinkRequest removeLinkRequest) {
         return webClient
             .method(HttpMethod.DELETE)
-            .uri("/links")
-            .header("Tg-Chat-Id", tgChatId.toString())
+            .uri(linksResource)
+            .header(tgChatIdHeader, tgChatId.toString())
             .bodyValue(removeLinkRequest)
             .retrieve()
             .bodyToMono(LinkResponse.class)
@@ -32,8 +36,8 @@ public class ScrapperWebClient implements ScrapperClient {
     public ListLinksResponse linksGet(Long tgChatId) {
         return webClient
             .method(HttpMethod.GET)
-            .uri("/links")
-            .header("Tg-Chat-Id", tgChatId.toString())
+            .uri(linksResource)
+            .header(tgChatIdHeader, tgChatId.toString())
             .retrieve()
             .bodyToMono(ListLinksResponse.class)
             .block();
@@ -43,8 +47,8 @@ public class ScrapperWebClient implements ScrapperClient {
     public LinkResponse linksPost(Long tgChatId, AddLinkRequest addLinkRequest) {
         return webClient
             .post()
-            .uri("/links")
-            .header("Tg-Chat-Id", tgChatId.toString())
+            .uri(linksResource)
+            .header(tgChatIdHeader, tgChatId.toString())
             .bodyValue(addLinkRequest)
             .retrieve()
             .bodyToMono(LinkResponse.class)
@@ -55,7 +59,7 @@ public class ScrapperWebClient implements ScrapperClient {
     public void tgChatIdDelete(Long id) {
         webClient
             .delete()
-            .uri(String.format("/tg-chat/%s", id))
+            .uri(String.format(tgChatResource, id))
             .retrieve()
             .bodyToMono(Void.class)
             .block();
@@ -65,7 +69,7 @@ public class ScrapperWebClient implements ScrapperClient {
     public void tgChatIdPost(Long id) {
         webClient
             .post()
-            .uri(String.format("/tg-chat/%s", id))
+            .uri(String.format(tgChatResource, id))
             .retrieve()
             .bodyToMono(Void.class)
             .block();
